@@ -32,6 +32,14 @@ function bagi(int $a, int $b){
     return $hasil;
 }
 
+
+function login ($username, $password){
+    if ($username == "Satar" && $password == "abc1234") {
+        return "login berhasil";
+    } else {
+        return "login gagal";   
+    }
+}
 ?>
 
 
@@ -42,7 +50,20 @@ function bagi(int $a, int $b){
 </form>
 
 
+<form method = "POST">
+    Masukkan Username : <input type="string" name="username"> <br>
+    Masukkan Password : <input type="password" name="password"> <br>
+    <input type="submit" value="login" >
+</form>
+
+
 <?php
+if (isset($_POST['username']) && isset($_POST['password'])){
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    echo login($username, $password);
+}   
+
 if (isset($_POST['a']) && isset($_POST['b'])){
     $angka1 = $_POST['a'];
     $angka2 = $_POST['b'];

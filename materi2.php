@@ -17,31 +17,35 @@ if(isset($_POST['angka'])){
 
 ?>
 
-// LOOPING WHILE
 
 <?php
+echo "<br>";
+echo "====looping while==== <br>";
 
 if (isset($_POST['angka'])){
     $data = $_POST['angka'];
     $i = 1;
-    echo "<br>";
     echo "angka genap : <br>";
     while ( $i <= $data){
         if ($i % 2 == 0) {
-            echo "angka $i <br>";
+            echo "$i <br>";
         }
         $i++;
     }
 }
 
 
-// LOOPING DO WHILE
 
+echo "<br>";
+echo "====looping do while==== <br>";
+echo "angka ganjil : <br>";
 if (isset($_POST['angka'])){
     $data = $_POST['angka'];
     $i = 1;
     do {
-        echo "angka $i <br>";
+        if ($i % 2 != 0) {
+            echo "$i <br>";
+        }
         $i++;
     } while ($i <= $data);
 }
